@@ -1,6 +1,5 @@
 
 
-
 <template>
   
     <div class="container mt-5">
@@ -16,8 +15,9 @@
                         <h5 class="card-title">{{post.title}}</h5>
         
                         <p class="card-text">{{post.content}}</p>
-        
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+
+                        <router-link  :to="{name: 'post-detail', params: {slug: post.slug }}" class="btn btn-primary">Dettagli</router-link>
+
         
                     </div>
        
@@ -25,7 +25,7 @@
        
             </div>
             
-            <nav aria-label="Page navigation example " class="mx-auto mt-5">
+            <nav aria-label="Page navigation example" class="mx-auto mt-5">
             
                 <ul class="pagination ">
             
@@ -34,7 +34,6 @@
                         <button class="page-link" href="#" @click="getPosts(currentPage - 1)">Previous</button>
 
                     </li>
-
             
                     <li class="page-item" :class=" {'disabled' : currentPage == lastPage } ">
                         
@@ -57,9 +56,9 @@
 
     export default {
 
-        name: 'Main',
+        name: 'Post',
 
-        data() {
+         data() {
 
             return {
 
@@ -95,28 +94,28 @@
 
                 })
 
-                    .then(response => {
-                        
-                        this.posts = response.data.result.data;
-
-                        this.currentPage = response.data.result.current_page;
-
-                        this.lastPage = response.data.result.last_page;
+                .then(response => {
                     
-                    })
+                    this.posts = response.data.result.data;
 
-                    .catch();
+                    this.currentPage = response.data.result.current_page;
+
+                    this.lastPage = response.data.result.last_page;
+                
+                })
+
+                .catch();
 
             }
 
         }
+
 
     }
 
 </script>
 
 
-<style lang="scss" scoped>
-
+<style  style="scss">
 
 </style>
