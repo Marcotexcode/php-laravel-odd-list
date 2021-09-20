@@ -8,8 +8,6 @@
 
         <Main/>
 
-        <Footer/>
-
     </div>
 
 </template>
