@@ -18,13 +18,12 @@
 
                     <div v-if="post.tags">
                         
-                        <span class="badge badge-success" v-for="tag in post.tags" :key="tag.id"> {{tag.name}} </span>
+                        <span class="badge badge-success m-1" v-for="tag in post.tags" :key="tag.id"> {{tag.name}} </span>
 
                     </div>
 
-                        <router-link  :to="{name: 'post', params: {slug: post.slug }}" class="btn btn-primary mt-5">Ritorna</router-link>
+                    <router-link  :to="{name: 'post', params: {slug: post.slug }}" class="btn btn-primary mt-5">Ritorna</router-link>
 
-              
                 </div>
        
             </div>

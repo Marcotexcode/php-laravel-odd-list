@@ -2529,7 +2529,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'SinglePost',
   data: function data() {
@@ -38616,7 +38615,7 @@ var render = function() {
                   _vm._l(_vm.post.tags, function(tag) {
                     return _c(
                       "span",
-                      { key: tag.id, staticClass: "badge badge-success" },
+                      { key: tag.id, staticClass: "badge badge-success m-1" },
                       [_vm._v(" " + _vm._s(tag.name) + " ")]
                     )
                   }),
